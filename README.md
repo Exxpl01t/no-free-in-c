@@ -40,4 +40,4 @@
 
 ### TODO
 
-- При помощи my_malloc() реализовать my_calloc() и my_realloc().
+~~При помощи my_malloc() реализовать my_calloc() и my_realloc().~~

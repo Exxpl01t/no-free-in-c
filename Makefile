@@ -1,3 +1,6 @@
+# This Makefile is only for Linux! 
+# Valgrind / libASan do not work in Windows!
+
 SRC := src
 OBJ := obj
 BIN := bin
@@ -7,11 +10,11 @@ OBJECTS := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SOURCES))
 BINARY  := $(BIN)/main.exe
 
 CC     := gcc
-CFLAGS := -O0 -std=c17
+CFLAGS := -O0 -g -std=c17
 
 .PHONY, .SILENT: all create-dirs run clean 
 
-all: create-dirs $(BINARY) run
+all: clean create-dirs $(BINARY)
 
 $(BINARY): $(OBJECTS)
 	$(CC) $(CFLAGS) $^ -o $@
